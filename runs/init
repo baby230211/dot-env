@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+if ! grep -q "export PATH=\"\$HOME/.local/scripts:\$PATH\"" ~/.zshrc; then
+	echo "Appending PATH to .zshrc"
+	cat <<EOF >>~/.zshrc
+
+# Local custom scripts directory to PATH
+export PATH="\$HOME/.local/scripts:\$PATH"
+
+EOF
+else
+	echo "PATH already in .zshrc"
+fi

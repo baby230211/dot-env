@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "Installing Aerospace..."
+brew install --cask nikitabobko/tap/aerospace
