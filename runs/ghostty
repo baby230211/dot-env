@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# >/dev/null redirects output to /dev/null, effectively silencing it
+# 2>&1 redirects stderr to stdout
+# stdin is the standard input, and represents 0
+# stdout is the standard output, and represents 1
+# stderr is the standard error output, and represents 2
+# /dev/null is a special file that discards all data written to it
+# if ... will according to the command exit status (0 for success, non-zero for failure)
+# $? is a special variable that holds the exit status of the last command executed
+if ghostty --version >/dev/null 2>&1; then
+  echo "Ghostty is already installed."
+  exit 0
+fi
+
+echo "Installing Ghostty..."
+brew install --cask ghostty

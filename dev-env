@@ -2,6 +2,9 @@
 
 script_dir=$(cd $(dirname "$BASH_SOURCE[0]") && pwd)
 dry="0"
+if [[ -z $XDG_CONFIG_HOME ]]; then
+	XDG_CONFIG_HOME=$HOME/.config
+fi
 
 while [[ $# > 0 ]]; do
 	if [[ "$1" == "--dry" ]]; then

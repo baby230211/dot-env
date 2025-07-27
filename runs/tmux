@@ -1,4 +1,15 @@
 #!/usr/bin/env bash
 
-echo "Installing tmux..."
-brew install tmux
+
+# -z checks if the variable is empty
+if [[ -z $(command -v brew) ]]; then
+    echo "Homebrew is not installed. Please install Homebrew first."
+    exit 1
+fi
+if [[ -z $(command -v tmux) ]]; then
+    echo "tmux is not installed. Installing tmux..."
+    brew install tmux
+else
+    echo "tmux is already installed."
+    exit 0
+fi

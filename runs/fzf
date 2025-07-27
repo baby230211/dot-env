@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if [[ -z $(command -v brew) ]]; then
+    echo "Homebrew is not installed. Please install Homebrew first."
+    exit 1
+fi
+if [[ -z $(command -v fzf) ]]; then
+    echo "fzf is not installed. Installing fzf..."
+    brew install fzf
+    echo "fzf installed successfully."
+else
+    echo "fzf is already installed."
+    exit 0
+fi

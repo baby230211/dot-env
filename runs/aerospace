@@ -1,4 +1,14 @@
 #!/usr/bin/env bash
 
-echo "Installing Aerospace..."
-brew install --cask nikitabobko/tap/aerospace
+if [[ -z $(command -v brew) ]]; then
+    echo "Homebrew is not installed. Please install Homebrew first."
+    exit 1
+fi
+if [[ -z $(command -v aerospace) ]]; then
+    echo "Aerospace is not installed. Installing Aerospace..."
+    brew install --cask nikitabobko/tap/aerospace
+else
+    echo "Aerospace is already installed."
+    exit 0
+fi
+

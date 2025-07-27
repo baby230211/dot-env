@@ -31,6 +31,10 @@ execute() {
 
 log "script_dir: $script_dir -- filter: $filter"
 cd $script_dir
+# if failed on find: -executable: unknown primary or operator
+# install findutils
+# on macOS: brew install findutils
+
 scripts=$(find ./runs -mindepth 1 -maxdepth 1 -executable -type f)
 for script in $scripts; do
 	if echo $script | grep -qv "$filter"; then
